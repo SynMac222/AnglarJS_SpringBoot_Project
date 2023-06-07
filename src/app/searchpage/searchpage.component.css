@@ -1,0 +1,32 @@
+.buttonlogout{
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+::ng-deep .cdk-overlay-container{
+     
+    width: 50%; 
+    margin:auto;
+    display: block;    
+    margin-left: 400px;
+    margin-right: auto; 
+    margin-top: 400px;
+    position: fixed;
+    z-index: 10;
+  }
+
+
+  :host ::ng-deep mat-form-field{
+    width: 50%; 
+    margin:auto;
+   
+    display: block;
+margin-left: auto;
+margin-right: auto; 
+    position: fixed;
+    left:400px;
+    margin-top: 400px;
+    z-index: 10;
+
+  }

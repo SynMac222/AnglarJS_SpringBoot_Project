@@ -1,0 +1,93 @@
+<div class="col-md-12">
+    <div class="card card-container">
+      <!-- <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      /> -->
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && topic.touched && validateTopic(topic.value) && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            minlength="3"
+            maxlength="20"
+            #username="ngModel"
+          />
+          <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Username is required</div>
+            <div *ngIf="username.errors.minlength">
+              Username must be at least 3 characters
+            </div>
+            <div *ngIf="username.errors.maxlength">
+              Username must be at most 20 characters
+            </div>
+          </div>
+        </div>
+        <br>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="3"
+            #password="ngModel"
+          />
+          <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">
+              Password must be at least 3 characters
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="userType">Choose a user type:</label>
+          <select class="custom-select" name="userType" [(ngModel)]="form.user_type" (blue)="validateTopic(user_type)"
+            (change)="validateTopic(topic.value)" #topic="ngModel" [class.is-invalid]="topicHasError && userType.touched">
+            <option selected value="default">My user type is..</option>
+            <option *ngFor="let user_type of user_types"> {{ user_type }} </option>
+          </select>
+
+
+          <div *ngIf="f.submitted && !topic.touched">User type is required</div>
+          <div *ngIf="f.submitted && !validateTopic(topic.value)">Default value is not allowed</div>
+
+          <!-- <div class="alert-danger" *ngIf="userType.submitted && !userType.touched && !validateTopic(userType.value) ">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">
+              Password must be at least 3 characters
+            </div>
+          </div> -->
+        </div>
+         <br>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Sign Up</button>
+        </div>
+       
+  
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+          Signup failed!<br />{{ errorMessage }}
+        </div>
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+      </div>
+    </div>
+  </div>

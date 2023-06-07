@@ -1,0 +1,122 @@
+
+    /* .container {
+    height: 70px;
+    width: 800px;
+    margin: 100px auto 0 auto;
+    }
+    .parent {
+    position: relative;
+    }
+    .search {
+    width: 500px;
+    height: 40px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    position: absolute;
+    }
+    .btn {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+  
+    top: 6px;
+    left: 285px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    } */
+
+      /* .search {
+    width: 500px;
+    height: 40px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    position: absolute;
+    } */
+
+    .buttonlogout{
+        position: absolute;
+        top:0;
+        right:0;
+    }
+
+
+   
+    /* :host ::ng-deep mat-option {
+      height: 100px;
+      min-width: 150px;
+      max-width: 500px;
+      width: 500px;
+      margin:0 auto;
+    } */
+
+
+    /* :host ::ng-deep .example-form{
+      width: 50%; 
+      margin:auto;
+      text-align: center;
+      display: block;
+  margin-left: auto;
+  margin-right: auto; 
+    }
+    :host ::ng-deep mat-form-field{
+      width: 50%; 
+      margin:auto;
+      text-align: center;
+      display: block;
+  margin-left: auto;
+  margin-right: auto; 
+    }
+
+    ::ng-deep .mat-autocomplete-panel#md-autocomplete-0{
+      width: 50%; 
+      margin:auto;
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+
+
+    :host ::ng-deep .example-form{
+      width: 50%; 
+      margin:auto;
+      text-align: center;
+      display: block;
+  margin-left: auto;
+  margin-right: auto; 
+    } */
+
+
+/* element.style {
+  margin-left: 500px;
+} */
+
+    ::ng-deep .cdk-overlay-container{
+     
+      width: 50%; 
+      margin:auto;
+      display: block;    
+      margin-left: 330px;
+      margin-right: auto; 
+      margin-top: 20px;
+      position: absolute;
+
+    }
+
+
+    :host ::ng-deep mat-form-field{
+      width: 50%; 
+      margin:auto;
+     
+      display: block;
+  margin-left: auto;
+  margin-right: auto; 
+      position: absolute;
+      left:300px
+ 
+    }

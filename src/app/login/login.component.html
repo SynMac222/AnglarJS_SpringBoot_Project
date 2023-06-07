@@ -1,0 +1,104 @@
+   <!--
+<form #userForm="ngForm" (ngSubmit)="login()" >
+   <div class="css-group">
+      
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              [(ngModel)]="form.username"
+              required
+              #username="ngModel"
+            />
+        
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              [(ngModel)]="form.password"
+              required
+              minlength="6"
+              #password="ngModel"
+            />
+        </div>
+   
+    <div class="form-buttons">
+        <button class="button button-primary" 
+                >Login</button>
+    </div>
+   </div>
+</form>
+
+-->
+<!-- <img src="../../assets/bg-image.jpg" /> -->
+
+
+<form #userForm="ngForm" (ngSubmit)="userForm.form.valid && login()" >
+  <div class="css-group">
+       <!-- <legend>Login</legend> -->
+       <h1>Building Product Selection Platform</h1>
+       <div class="form-group">
+           <label for="username">Username</label>
+           <input
+             type="text"
+             class="form-control"
+             name="username"
+             [(ngModel)]="form.username"
+             required
+             minlength="3"
+             #username="ngModel"
+           />
+
+           <div *ngIf="userForm.submitted &&username.errors?.['required']" style="color: red;" >
+            Name is required.
+          </div>
+          <div *ngIf="userForm.submitted &&username.errors?.['minlength']" style="color: red;" >
+            Name must be at least 3 characters long.
+          </div>
+
+          
+          <br>
+          <!-- <small [class.d-none]="username.errors?.['required']" class="text-danger" > Name is required</small> -->
+        
+       </div>
+       <br>
+       <div class="form-group">
+           <label for="password">Password</label>
+           <input
+             type="password"
+             class="form-control"
+             name="password"
+             [(ngModel)]="form.password"
+             required
+        
+             minlength="3"
+             #password="ngModel"
+           />
+           <br>
+           <div *ngIf="userForm.submitted &&password.errors?.['required']" style="color: red;" >
+            Password is required.
+          </div>
+          <div *ngIf="userForm.submitted && password.errors?.['minlength']" style="color: red;">
+            Passwod must be at least 3 characters long.
+          </div>
+       
+           <!-- <small [class.d-none]="username.errors?.['minlength']" class="text-danger" >  Password must be at least 3 characters long.</small> -->
+       </div>
+  
+   <div class="form-buttons">
+       <button class="button button-primary" 
+               >Login</button>
+   </div>
+  </div>
+</form>
+
+
+<button class="button-singup" (click)="gotoRegister()"
+>Sign up</button>
+

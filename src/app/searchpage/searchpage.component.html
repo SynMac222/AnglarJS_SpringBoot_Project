@@ -1,0 +1,21 @@
+
+
+<button class="buttonlogout" (click)="logout()">Sign Out</button>
+  
+<form class="example-form">
+    <mat-form-field >
+
+        <mat-label></mat-label>
+ 
+        <input  #autocompleteInput  class="example-input" type="text" placeholder="Enter title"  matInput [formControl]="myControl" [matAutocomplete]="auto"  [(ngModel)]="value">
+        <mat-autocomplete   class="autolist" #auto="matAutocomplete" [displayWith]="displayNull" >
+          <mat-option class="autolist" *ngFor="let option of filteredOptions | async" [value]="option" (onSelectionChange)="filterPostList1($event)">
+            {{option.productname}}
+          </mat-option>
+        </mat-autocomplete>
+        <button type="button" mat-button *ngIf="this.myControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="Clear()">
+          <mat-icon>Clear</mat-icon>
+        </button>
+   
+    </mat-form-field>
+  </form>

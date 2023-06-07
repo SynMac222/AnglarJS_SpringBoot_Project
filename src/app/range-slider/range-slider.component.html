@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+   
+            <input
+              type="number"
+              [min]="lowerBound"
+              [max]="higherBound"
+              class="form-control"
+              [(ngModel)]="minValue"
+              (change)="onMinValueChange($event)"
+            />
+      
+     
+            <mat-slider [min]="lowerBound" [max]="higherBound" class="w-100">
+              <input
+                matSliderStartThumb
+                [(ngModel)]="minValue"
+                (change)="onMinValueChange($event)"
+              />
+              <input
+                matSliderEndThumb
+                [(ngModel)]="maxValue"
+                (change)="onMaxValueChange($event)"
+              />
+            </mat-slider>
+    
+   
+            <input
+              type="number"
+              [min]="lowerBound"
+              [max]="higherBound"
+              class="form-control"
+              [(ngModel)]="maxValue"
+              (change)="onMaxValueChange($event)"
+            />
+      
+    </div>
+</div>
